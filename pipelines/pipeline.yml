@@ -236,8 +236,8 @@ stages:
                     NAMESPACE=$(cd modules && terraform output namespace)
                     ./scripts/deploy.sh \
                       $(Pipeline.Workspace)/bin/build_artifacts.zip \
-                      ${NAMESPACE} \
-                      ${ARTIFACTS_BUCKET_NAME}
+                      "$NAMESPACE" \
+                      "$ARTIFACTS_BUCKET_NAME"
                   displayName: "Deploy Application Code"
                   env:
                     AWS_DEFAULT_REGION: us-east-1
